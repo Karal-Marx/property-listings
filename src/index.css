@@ -1,0 +1,402 @@
+/* * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background: rgb(210, 210, 210);
+    margin: 0px;
+    padding: 0;
+}
+
+
+
+.navbar {
+    background-color: rgb(109, 112, 117);
+    color: white;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+    
+}
+
+.navbar > span {
+    margin-left: 14px ;
+    font-size: 1.8rem;
+}
+
+.navbar > button {
+    font-size: 20px;
+    color: white;
+    background-color: rgb(63, 103, 224);
+    border: none;
+    padding-top: 5px ;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 15px;
+    border-radius: 5px;
+   
+}
+
+.navbar > button:hover {
+    box-shadow: rgba(96, 134, 183, 0.35) 0px 5px 15px;
+}
+
+
+.title {
+    margin-top: 20px;
+}
+.title > span {
+    margin-left: 85px;
+    
+    font-size: large;
+}
+
+
+.property-list {
+    display: flex;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.property-entry {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    min-width: 200px;
+    max-width: 200px;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-radius: 10px;
+    padding-block: 10px;
+    margin-top: 25px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.property-entry > * {
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+.property-type {
+    font-weight: 600;
+    font-size: 1.4rem;
+    height: 25px;
+}
+
+.property-location {
+    font-weight: 500;
+    margin-top: 5px;
+    height: 18px;
+}
+
+.property-desc {
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 10px;
+    height: 70px;
+    overflow: auto;
+    line-height: 1.4;
+
+}
+
+.property-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.view-button {
+    color: white;
+    background-color: rgb(63, 103, 224);
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+
+.back-button {
+    color: white;
+    background-color: rgb(63, 103, 224);
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    padding-block: 7px;
+}
+
+.add-property-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    font-family: sans-serif;
+}
+
+.add-property-heading {
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.add-property-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.add-property-input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-property-image {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-property-desc {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-property-button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-property-button:hover {
+    background-color: #0056b3;
+} */
+
+/* Base Reset */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Light Theme */
+body.light {
+    background: rgb(210, 210, 210);
+    color: #000;
+}
+
+body.light .navbar {
+    background-color: rgb(95, 97, 101);
+    color: white;
+}
+
+body.light .navbar > button,
+body.light .view-button,
+body.light .back-button {
+    background-color: rgb(63, 103, 224);
+    color: white;
+}
+
+body.light .property-entry {
+    background-color: whitesmoke;
+}
+
+body.light .add-property-container {
+    background-color: #fff;
+}
+
+/* Dark Theme */
+body.dark {
+    background: #1e1e1e;
+    color: #f5f5f5;
+}
+
+body.dark .navbar {
+    background-color: #2a2a2a;
+    color: #f5f5f5;
+}
+
+body.dark .navbar > button,
+body.dark .view-button,
+body.dark .back-button {
+    background-color: #3b6ecb;
+    color: white;
+}
+
+body.dark .property-entry {
+    background-color: #2e2e2e;
+}
+
+body.dark .add-property-container {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+}
+
+/* Shared Styles */
+.navbar {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar > span {
+    margin-left: 14px;
+    font-size: 1.8rem;
+}
+
+.navbar-buttons > * {
+    font-size: 20px;
+    border: none;
+    padding: 5px;
+    margin-right: 15px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    
+}
+
+.navbar > button:hover {
+    box-shadow: rgba(96, 134, 183, 0.35) 0px 5px 15px;
+}
+
+.title {
+    margin-top: 20px;
+}
+
+.title > span {
+    margin-left: 85px;
+    font-size: large;
+}
+
+.property-list {
+    display: flex;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.property-entry {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    max-width: 200px;
+    margin: 25px 15px 0;
+    border-radius: 10px;
+    padding-block: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+                rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.property-entry > * {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.property-type {
+    font-weight: 600;
+    font-size: 1.4rem;
+    height: 25px;
+}
+
+.property-location {
+    font-weight: 500;
+    margin-top: 5px;
+    height: 18px;
+}
+
+.property-desc {
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 10px;
+    height: 70px;
+    overflow: auto;
+    line-height: 1.4;
+}
+
+.property-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.view-button,
+.back-button {
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    padding-block: 7px;
+    padding-inline: 10px;
+    cursor: pointer;
+}
+
+.add-property-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    font-family: sans-serif;
+}
+
+.add-property-heading {
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.add-property-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.add-property-input,
+.add-property-image,
+.add-property-desc {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: inherit;
+    color: inherit;
+}
+
+.add-property-button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-property-button:hover {
+    background-color: #0056b3;
+}
